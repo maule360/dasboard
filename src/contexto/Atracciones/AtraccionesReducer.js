@@ -20,7 +20,6 @@ export default (state, action) => {
   switch (action.type) {
     case GET_LISTA_ATRACCIONES:
       const df = new DataFrame(action.payload);
-      console.log(df);
       const atracciones = [].concat.apply([], (df.select('nombre').toArray())).filter(onlyUnique);
       const comunas = [].concat.apply([], (df.select('comuna').toArray())).filter(onlyUnique);
       const provincias = [].concat.apply([], (df.select('provincia').toArray())).filter(onlyUnique);

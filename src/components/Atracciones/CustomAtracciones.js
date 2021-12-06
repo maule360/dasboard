@@ -14,40 +14,10 @@ import React, { useEffect, useContext } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Grid } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
-
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import { styled } from '@mui/material/styles';
-
-import Paper from '@mui/material/Paper';
 import Table2 from './TableCustomActividades';
 import AtraccionesContext from '../../contexto/Atracciones/AtraccionesContext';
 import Card from './Card';
-
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-  },
-}));
-
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:nth-of-type(odd)': {
-    backgroundColor: theme.palette.action.hover,
-  },
-  // hide last border
-  '&:last-child td, &:last-child th': {
-    border: 0,
-  },
-}));
+import Tablenew from './Table';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -89,7 +59,6 @@ export default function ScrollableTabsButtonForce() {
   const {
     getListaAtracciones,
     dataListaAtracciones,
-    getListaActividades,
     totalAtracciones,
     totalComunasAtracciones,
     totalProvinciaAtracciones,
@@ -98,11 +67,6 @@ export default function ScrollableTabsButtonForce() {
   useEffect(() => {
     getListaAtracciones();
   }, []);
-
-  function handleClick(event) {
-    const { id } = event.currentTarget;
-    getListaActividades(id);
-  }
 
   const Contenido = (
     (dataListaAtracciones.length > 0)
@@ -150,41 +114,7 @@ export default function ScrollableTabsButtonForce() {
           <div className={classes.div}>
             <Grid container className={classes.root} spacing={2}>
               <Grid item md={6} xs={12}>
-                <TableContainer component={Paper}>
-                  <Table size="small" aria-label="customized table">
-                    <TableHead>
-                      <TableRow>
-                        <StyledTableCell>Atracción Turistica</StyledTableCell>
-                        <StyledTableCell align="right">Descripcion</StyledTableCell>
-                        <StyledTableCell align="right">Comuna</StyledTableCell>
-                        <StyledTableCell align="right">Provincia</StyledTableCell>
-                        <StyledTableCell align="right">Actividades</StyledTableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {dataListaAtracciones.map((js) => (
-                        <StyledTableRow key={js.id}>
-                          <StyledTableCell component="th" scope="row">
-                            {js.nombre.replace('Atracción Turistica ', '').replace('Atracción Turística ', '')}
-                          </StyledTableCell>
-                          <StyledTableCell align="right">{js.descripcion}</StyledTableCell>
-                          <StyledTableCell align="right">{js.comuna}</StyledTableCell>
-                          <StyledTableCell align="right">{js.provincia}</StyledTableCell>
-                          <StyledTableCell align="right">
-                            <Button
-                              className={classes.button}
-                              variant="outlined"
-                              id={js.id}
-                              onClick={handleClick}
-                            >
-                              Mostrar
-                            </Button>
-                          </StyledTableCell>
-                        </StyledTableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
+                <Tablenew rows={dataListaAtracciones} />
               </Grid>
               <Grid item md={6} xs={12}>
                 <Table2 />
