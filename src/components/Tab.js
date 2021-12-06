@@ -20,7 +20,7 @@ import MuseumIcon from '@mui/icons-material/Museum';
 import Atracciones from './Atracciones/Atracciones';
 import Museos from './Museos';
 import Operadores from './Operadores';
-import Rutas from './Rutas';
+import Rutas from './Rutas/Rutas';
 
 function TabPanel(props) {
   const {
@@ -147,15 +147,12 @@ export default function ScrollableTabsButtonForce() {
         <Atracciones />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        {tabNames[2]}
         <Rutas />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        {tabNames[3]}
         <Operadores />
       </TabPanel>
       <TabPanel value={value} index={4}>
-        {tabNames[4]}
         <Museos />
       </TabPanel>
 

@@ -14,8 +14,7 @@ import React, { useEffect, useContext } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Grid } from '@material-ui/core';
-import Table2 from './TableCustomActividades';
-import AtraccionesContext from '../../contexto/Atracciones/AtraccionesContext';
+import RutasContext from '../../contexto/Rutas/RutasContext';
 import Card from './Card';
 import Tablenew from './Table';
 
@@ -57,19 +56,19 @@ const useStyles = makeStyles((theme) => ({
 export default function ScrollableTabsButtonForce() {
   const classes = useStyles();
   const {
-    getListaAtracciones,
-    dataListaAtracciones,
-    totalAtracciones,
-    totalComunasAtracciones,
-    totalProvinciaAtracciones,
-    totalTipoAtracciones,
-  } = useContext(AtraccionesContext);
+    getListaRutas,
+    dataListaRutas,
+    totalRutas,
+    totalComunasRutas,
+    totalProvinciaRutas,
+    totalTipoRutas,
+  } = useContext(RutasContext);
   useEffect(() => {
-    getListaAtracciones();
+    getListaRutas();
   }, []);
 
   const Contenido = (
-    (dataListaAtracciones.length > 0)
+    (dataListaRutas.length > 0)
       ? (
         <div className={classes.div}>
 
@@ -78,28 +77,28 @@ export default function ScrollableTabsButtonForce() {
               <Grid item md={3} xs={12}>
                 <Card
                   title="Total Atracciones"
-                  value={totalAtracciones}
+                  value={totalRutas}
                   color="success.main"
                 />
               </Grid>
               <Grid item md={3} xs={12}>
                 <Card
                   title="Total Comunas"
-                  value={totalComunasAtracciones}
+                  value={totalComunasRutas}
                   color="warning.main"
                 />
               </Grid>
               <Grid item md={3} xs={12}>
                 <Card
                   title="Total Provincias"
-                  value={totalProvinciaAtracciones}
+                  value={totalProvinciaRutas}
                   color="primary.main"
                 />
               </Grid>
               <Grid item md={3} xs={12}>
                 <Card
-                  title="Total Tipo Atracciones"
-                  value={totalTipoAtracciones}
+                  title="Total Tipo Rutas"
+                  value={totalTipoRutas}
                   color="error.main"
                 />
               </Grid>
@@ -108,20 +107,18 @@ export default function ScrollableTabsButtonForce() {
 
           <div className={classes.titulo}>
             <Typography color="primary" variant="h5">
-              LISTADO ATRACCIONES
+              LISTADO RUTAS
             </Typography>
           </div>
           <div className={classes.div}>
             <Grid container className={classes.root} spacing={2}>
               <Grid item md={6} xs={12}>
                 <Tablenew
-                  rows={dataListaAtracciones}
-                  cols={['Atracción Turistica', 'Descripcion', 'Comuna', 'Provincia', 'Actividades']}
+                  rows={dataListaRutas}
+                  cols={['Ruta', 'Descripcion', 'Comuna', 'Provincia']}
                 />
               </Grid>
-              <Grid item md={6} xs={12}>
-                <Table2 />
-              </Grid>
+              <Grid item md={6} xs={12} />
             </Grid>
           </div>
         </div>

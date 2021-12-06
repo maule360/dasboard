@@ -2,6 +2,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './config/themeConfig';
 import ContenidoMain from './components/ContenidoMain';
 import Atracciones from './contexto/Atracciones/AtraccionesState';
+import Rutas from './contexto/Rutas/RutasState';
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
         }}
         >
           <Atracciones>
-            <ContenidoMain />
+            <Rutas>
+              <ContenidoMain />
+            </Rutas>
           </Atracciones>
         </div>
       </div>
