@@ -27,6 +27,7 @@ import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Table2 from './TableCustomActividades';
 import AtraccionesContext from '../../contexto/Atracciones/AtraccionesContext';
+import Card from './Card';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -59,6 +60,9 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'auto',
     minHeight: 800,
   },
+  cards: {
+    paddingBottom: 30,
+  },
   button: {
     width: '100%',
     height: 40,
@@ -86,6 +90,10 @@ export default function ScrollableTabsButtonForce() {
     getListaAtracciones,
     dataListaAtracciones,
     getListaActividades,
+    totalAtracciones,
+    totalComunasAtracciones,
+    totalProvinciaAtracciones,
+    totalTipoAtracciones,
   } = useContext(AtraccionesContext);
   useEffect(() => {
     getListaAtracciones();
@@ -95,10 +103,45 @@ export default function ScrollableTabsButtonForce() {
     const { id } = event.currentTarget;
     getListaActividades(id);
   }
+
   const Contenido = (
     (dataListaAtracciones.length > 0)
       ? (
         <div className={classes.div}>
+
+          <div>
+            <Grid container className={classes.cards} spacing={2}>
+              <Grid item md={3} xs={12}>
+                <Card
+                  title="Total Atracciones"
+                  value={totalAtracciones}
+                  color="success.main"
+                />
+              </Grid>
+              <Grid item md={3} xs={12}>
+                <Card
+                  title="Total Comunas"
+                  value={totalComunasAtracciones}
+                  color="warning.main"
+                />
+              </Grid>
+              <Grid item md={3} xs={12}>
+                <Card
+                  title="Total Provincias"
+                  value={totalProvinciaAtracciones}
+                  color="primary.main"
+                />
+              </Grid>
+              <Grid item md={3} xs={12}>
+                <Card
+                  title="Total Tipo Atracciones"
+                  value={totalTipoAtracciones}
+                  color="error.main"
+                />
+              </Grid>
+            </Grid>
+          </div>
+
           <div className={classes.titulo}>
             <Typography color="primary" variant="h5">
               LISTADO ATRACCIONES

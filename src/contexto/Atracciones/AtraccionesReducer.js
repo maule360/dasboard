@@ -1,3 +1,8 @@
+/* eslint-disable prefer-spread */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-case-declarations */
+import DataFrame from 'dataframe-js';
+
 import {
   GET_LISTA_ATRACCIONES,
   FAIL_LISTA_ATRACCIONES,
@@ -8,10 +13,24 @@ import {
 } from './index';
 
 export default (state, action) => {
+  function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+  }
+
   switch (action.type) {
     case GET_LISTA_ATRACCIONES:
+      const df = new DataFrame(action.payload);
+      console.log(df);
+      const atracciones = [].concat.apply([], (df.select('nombre').toArray())).filter(onlyUnique);
+      const comunas = [].concat.apply([], (df.select('comuna').toArray())).filter(onlyUnique);
+      const provincias = [].concat.apply([], (df.select('provincia').toArray())).filter(onlyUnique);
+      const tipo = [].concat.apply([], (df.select('descripcion').toArray())).filter(onlyUnique);
       return {
         ...state,
+        totalAtracciones: atracciones.length,
+        totalComunasAtracciones: comunas.length,
+        totalProvinciaAtracciones: provincias.length,
+        totalTipoAtracciones: tipo.length,
         dataListaAtracciones: action.payload,
         LoadingListaAtracciones: false,
       };

@@ -17,6 +17,10 @@ import {
 const SolverState = ({ children }) => {
   const initialState = {
     dataListaAtracciones: [],
+    totalAtracciones: null,
+    totalComunasAtracciones: null,
+    totalProvinciaAtracciones: null,
+    totalTipoAtracciones: null,
     LoadingListaAtracciones: false,
     dataListaActividades: [],
     LoadingListaActividades: false,
@@ -87,6 +91,11 @@ const SolverState = ({ children }) => {
         dataListaActividades: state.dataListaActividades,
         setLoadingListaActividades,
         LoadingListaActividades: state.LoadingListaActividades,
+        totalAtracciones: state.totalAtracciones,
+        totalComunasAtracciones: state.totalComunasAtracciones,
+        totalProvinciaAtracciones: state.totalProvinciaAtracciones,
+        totalTipoAtracciones: state.totalTipoAtracciones,
+
       }}
     >
       {children}
