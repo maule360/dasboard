@@ -24,9 +24,14 @@ const SolverState = ({ children }) => {
     LoadingListaAtracciones: false,
     dataListaActividades: [],
     LoadingListaActividades: false,
+    tituloActividades: '',
   };
 
   const [state, dispatch] = useReducer(Reducer, initialState);
+
+  const setTituloActividades = async (title) => {
+    state.tituloActividades = title;
+  };
 
   const getListaActividades = async (id) => {
     try {
@@ -95,7 +100,8 @@ const SolverState = ({ children }) => {
         totalComunasAtracciones: state.totalComunasAtracciones,
         totalProvinciaAtracciones: state.totalProvinciaAtracciones,
         totalTipoAtracciones: state.totalTipoAtracciones,
-
+        setTituloActividades,
+        tituloActividades: state.tituloActividades,
       }}
     >
       {children}

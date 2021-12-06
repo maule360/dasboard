@@ -136,6 +136,7 @@ export default function CustomPaginationActionsTable(props) {
 
   const {
     getListaActividades,
+    setTituloActividades,
   } = useContext(AtraccionesContext);
 
   const [page, setPage] = React.useState(0);
@@ -154,7 +155,8 @@ export default function CustomPaginationActionsTable(props) {
   };
 
   function handleClick(event) {
-    const { id } = event.currentTarget;
+    const { id, name } = event.currentTarget;
+    setTituloActividades(name);
     getListaActividades(id);
   }
 
@@ -192,6 +194,7 @@ export default function CustomPaginationActionsTable(props) {
                 <Button
                   className={classes.button}
                   variant="outlined"
+                  name={row.nombre}
                   id={row.id}
                   onClick={handleClick}
                 >

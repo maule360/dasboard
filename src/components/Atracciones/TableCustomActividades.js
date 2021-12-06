@@ -80,7 +80,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ScrollableTabsButtonForce() {
   const classes = useStyles();
-  const { dataListaActividades } = useContext(AtraccionesContext);
+  const {
+    dataListaActividades,
+    tituloActividades,
+  } = useContext(AtraccionesContext);
   useEffect(() => {
   }, [dataListaActividades]);
 
@@ -91,6 +94,8 @@ export default function ScrollableTabsButtonForce() {
           <div className={classes.titulo}>
             <Typography color="primary" variant="h5">
               LISTADO ACTIVIDADES
+              {' '}
+              {tituloActividades}
             </Typography>
           </div>
           <div className={classes.div}>
