@@ -18,7 +18,7 @@ import StreetviewIcon from '@mui/icons-material/Streetview';
 import AddRoadIcon from '@mui/icons-material/AddRoad';
 import MuseumIcon from '@mui/icons-material/Museum';
 import Atracciones from './Atracciones/Atracciones';
-import Museos from './Museos';
+import Museos from './Museos/Museos';
 import Operadores from './Operadores';
 import Rutas from './Rutas/Rutas';
 

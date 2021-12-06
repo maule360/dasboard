@@ -3,6 +3,7 @@ import theme from './config/themeConfig';
 import ContenidoMain from './components/ContenidoMain';
 import Atracciones from './contexto/Atracciones/AtraccionesState';
 import Rutas from './contexto/Rutas/RutasState';
+import Museos from './contexto/Museos/MuseosState';
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
         >
           <Atracciones>
             <Rutas>
-              <ContenidoMain />
+              <Museos>
+                <ContenidoMain />
+              </Museos>
             </Rutas>
           </Atracciones>
         </div>
