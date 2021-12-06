@@ -99,7 +99,7 @@ export default function ScrollableTabsButtonForce() {
 
           <div className={classes.titulo}>
             <Typography color="primary" variant="h5">
-              LISTADO RUTAS
+              LISTADO MUSEOS
             </Typography>
           </div>
           <div className={classes.div}>

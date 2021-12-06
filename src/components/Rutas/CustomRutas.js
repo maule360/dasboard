@@ -76,7 +76,7 @@ export default function ScrollableTabsButtonForce() {
             <Grid container className={classes.cards} spacing={2}>
               <Grid item md={3} xs={12}>
                 <Card
-                  title="Total Atracciones"
+                  title="Total Rutas"
                   value={totalRutas}
                   color="success.main"
                 />
