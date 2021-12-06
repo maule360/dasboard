@@ -1,0 +1,219 @@
+{
+  "variablesMix": [
+    {
+      "descripcion": "Celulosa Cara",
+      "valorActual": "100"
+    },
+    {
+      "descripcion": "Celulosa Reverso",
+      "valorActual": "100"
+    },{
+      "descripcion": "Celulosa Tripa",
+      "valorActual": "5"
+    },
+    {
+      "descripcion": "Celulosa Proteccion",
+      "valorActual": "30"
+    },
+    {
+      "descripcion": "Recorte Proteccion",
+      "valorActual": "70"
+    },
+    {
+      "descripcion": "Recorte Tripa",
+      "valorActual": "32"
+    },
+    {
+      "descripcion": "Area 140 a Proteccion",
+      "valorActual": "0"
+    },
+    {
+      "descripcion": "Area 123 a Proteccion",
+      "valorActual": "0"
+    },
+    {
+      "descripcion": "Area 140 a Tripa",
+      "valorActual": "47"
+    },
+    {
+      "descripcion": "Area 123 a Tripa",
+      "valorActual": "16"
+    }
+  ],
+  "tiempoVidaVestimentas": [
+    {
+      "descripcion": "Manta Segunda Prensa Inferior",
+      "dias": "153.23"
+    },
+    {
+      "descripcion": "Manta Tercera Prensa",
+      "dias": "43.23"
+    },
+    {
+      "descripcion": "Paño Primera Presa Interior",
+      "dias": "183.43"
+    },
+    {
+      "descripcion": "Paño Primera Presa Superior",
+      "dias": "63.03"
+    },
+    {
+      "descripcion": "Paño Segunda Presa Interior",
+      "dias": "153.23"
+    },
+    {
+      "descripcion": "Paño Segunda Presa Superior",
+      "dias": "23.43"
+    },
+    {
+      "descripcion": "Paño Tercera Prensa",
+      "dias": "13.27"
+    },
+    {
+      "descripcion": "Paño Tercera Prensa",
+      "dias": "3.52"
+    },
+    {
+      "descripcion": "Tela Formadora Cara",
+      "dias": "53.23"
+    },
+    {
+      "descripcion": "Tela Formadora Duoforme",
+      "dias": "53.23"
+    },
+    {
+      "descripcion": "Tela Formadora Proteccion",
+      "dias": "153.23"
+    },
+    {
+      "descripcion": "Tela Formadora Reverso",
+      "dias": "53.23"
+    },
+    {
+      "descripcion": "Tela Formadora Tripa",
+      "dias": "153.23"
+    }
+  ],
+
+  "Graphics":[
+    {
+        "posicion": 0,
+        "tagID": "763A0520_PV",
+        "titulo": "Blistering",
+        "id": 0,
+        "limite_inf": "89.2",
+        "valores": [
+            {
+                "min_valor": "89.2",
+                "valor": 89.68387,
+                "max_valor": "90.5",
+                "fecha": "2021-05-27",
+                "hora": "00:00"
+            },
+            {
+                "max_valor": "90.5",
+                "valor": 89.42793,
+                "min_valor": "89.2",
+                "hora": "00:30",
+                "fecha": "2021-05-27"
+            },
+            {
+                "fecha": "2021-05-27",
+                "valor": 89.58484,
+                "hora": "01:00",
+                "min_valor": "89.2",
+                "max_valor": "90.5"
+            }
+        ],
+        "limite_sup": "90.5"
+    },
+    {
+      "posicion": 0,
+      "tagID": "763A0520_PV",
+      "titulo": "Bonding",
+      "id": 0,
+      "limite_inf": "89.2",
+      "valores": [
+          {
+              "min_valor": "89.2",
+              "valor": 89.68387,
+              "max_valor": "90.5",
+              "fecha": "2021-05-27",
+              "hora": "00:00"
+          },
+          {
+              "max_valor": "90.5",
+              "valor": 89.42793,
+              "min_valor": "89.2",
+              "hora": "00:30",
+              "fecha": "2021-05-27"
+          },
+          {
+              "fecha": "2021-05-27",
+              "valor": 89.58484,
+              "hora": "01:00",
+              "min_valor": "89.2",
+              "max_valor": "90.5"
+          }
+      ],
+      "limite_sup": "90.5"
+  }
+],
+  "papeles" : {
+    "M": [
+      { "id": 1, "papel": "2C345M" },
+      { "id": 1, "papel": "2C346M" }
+    ],
+    "B": [
+      { "id": 1, "papel": "2C345B" }
+    ]
+  },
+  "textos": {
+    "formulario": {
+      "papel": {
+        "titulo": "Papel",
+        "helper": "Seleccione el tipo de papel"
+      },
+      "agregacion": [
+        "Anual", "Semestral", "trimestral",
+        "mensual", "semanal", "diario"
+      ]
+    }
+  },
+  "variables_recomendadas" :{
+    "settings" : [
+      "PREN_3P_MAIN_LINEAR_MEAS",
+      "PREN_2P_MAIN_LINEAR_MEAS",
+      "PREN_1P_FLP_ACTUAL",
+      "VALZ_010_CARGA_LINEAL",
+      "CEN_CAUDAL_TOTAL_SALIDA_TRIPA",
+      "CEN_CAUDAL_TOTAL_SALIDA_REVERSO",
+      "CEN_CAUDAL_TOTAL_SALIDA_PROTECCION",
+      "CEN_CAUDAL_TOTAL_SALIDA_CARA",
+      "CEN_010_PIC_4110_PV",
+      "CEN_010_PIC_4210_PV",
+      "CEN_010_PIC_4310_PV",
+      "CEN_010_PIC_4410_PV",
+      "CEN_010_GIC_4120_PV",
+      "CEN_010_GIC_4220_PV",
+      "CEN_010_GIC_4320_PV",
+      "CEN_010_GIC_4420_PV",
+      "QCS_CAPA_CARA_SP",
+      "QCS_CAPA_PROTECCION_SP",
+      "QCS_CAPA_REVERSO_SP",
+      "QCS_CAPA_TRIPA_SP",
+      "100_AIC_353_pv",
+      "100_AIC_352_pv",
+      "100_AIC_350_pv",
+      "100_AIC_351_pv"
+    ],
+    "vacio" : [
+      "AAAAA",
+      "VVVVV"
+    ],
+    "vapor" : [
+      "CCCCCC",
+      "DDDDD"
+    ]
+  }
+}
