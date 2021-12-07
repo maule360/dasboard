@@ -66,6 +66,10 @@ export default function ScrollableTabsButtonForce() {
   useEffect(() => {
     getListaRutas();
   }, []);
+  const tituloCard1 = 'Rutas Registradas';
+  const tituloCard2 = 'Comunas con Rutas Registradas';
+  const tituloCard3 = 'Provincias con Rutas Registradas';
+  const tituloCard4 = 'Total Tipo Rutas';
 
   const Contenido = (
     (dataListaRutas.length > 0)
@@ -76,30 +80,23 @@ export default function ScrollableTabsButtonForce() {
             <Grid container className={classes.cards} spacing={2}>
               <Grid item md={3} xs={12}>
                 <Card
-                  title="Total Rutas"
+                  title={tituloCard1}
                   value={totalRutas}
                   color="success.main"
                 />
               </Grid>
               <Grid item md={3} xs={12}>
                 <Card
-                  title="Total Comunas"
-                  value={totalComunasRutas}
-                  color="warning.main"
-                />
-              </Grid>
-              <Grid item md={3} xs={12}>
-                <Card
-                  title="Total Provincias"
+                  title={tituloCard3}
                   value={totalProvinciaRutas}
                   color="primary.main"
                 />
               </Grid>
               <Grid item md={3} xs={12}>
                 <Card
-                  title="Total Tipo Rutas"
-                  value={totalTipoRutas}
-                  color="error.main"
+                  title={tituloCard2}
+                  value={totalComunasRutas}
+                  color="warning.main"
                 />
               </Grid>
             </Grid>

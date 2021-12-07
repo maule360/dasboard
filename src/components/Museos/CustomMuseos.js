@@ -72,6 +72,10 @@ export default function ScrollableTabsButtonForce() {
   useEffect(() => {
   }, [dataListaMuseosProvincia]);
 
+  const tituloCard1 = 'Museos Registradas';
+  const tituloCard2 = 'Comunas con Museos Registrados';
+  const tituloCard3 = 'Provincias con Museos Registrados';
+
   const Contenido = (
     (dataListaMuseos.length > 0)
       ? (
@@ -81,23 +85,23 @@ export default function ScrollableTabsButtonForce() {
             <Grid container className={classes.cards} spacing={2}>
               <Grid item md={3} xs={12}>
                 <Card
-                  title="Total Museos"
+                  title={tituloCard1}
                   value={totalMuseos}
                   color="success.main"
                 />
               </Grid>
               <Grid item md={3} xs={12}>
                 <Card
-                  title="Total Comunas"
-                  value={totalComunasMuseos}
-                  color="warning.main"
+                  title={tituloCard3}
+                  value={totalProvinciaMuseos}
+                  color="primary.main"
                 />
               </Grid>
               <Grid item md={3} xs={12}>
                 <Card
-                  title="Total Provincias"
-                  value={totalProvinciaMuseos}
-                  color="primary.main"
+                  title={tituloCard2}
+                  value={totalComunasMuseos}
+                  color="warning.main"
                 />
               </Grid>
             </Grid>

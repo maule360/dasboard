@@ -74,7 +74,10 @@ export default function CustomOperadores() {
   useEffect(() => {
     console.log(dataListaOperadoresProvincia);
   }, [dataListaOperadoresProvincia]);
-
+  const tituloCard1 = 'Operadores Registrados';
+  const tituloCard2 = 'Comunas con Operadores';
+  const tituloCard3 = 'Provincias con Operadores';
+  const tituloCard4 = 'Categorias Operadores';
   const Contenido = (
     (dataListaOperadores.length > 0)
       ? (
@@ -84,30 +87,30 @@ export default function CustomOperadores() {
             <Grid container className={classes.cards} spacing={2}>
               <Grid item md={3} xs={12}>
                 <Card
-                  title="Total Operadores"
+                  title={tituloCard1}
                   value={totalOperadores}
                   color="success.main"
                 />
               </Grid>
               <Grid item md={3} xs={12}>
                 <Card
-                  title="Total Comunas"
-                  value={totalComunasOperadores}
-                  color="warning.main"
-                />
-              </Grid>
-              <Grid item md={3} xs={12}>
-                <Card
-                  title="Total Provincias"
+                  title={tituloCard3}
                   value={totalProvinciaOperadores}
                   color="primary.main"
                 />
               </Grid>
               <Grid item md={3} xs={12}>
                 <Card
-                  title="Categorias Operadores"
+                  title={tituloCard2}
+                  value={totalComunasOperadores}
+                  color="warning.main"
+                />
+              </Grid>
+              <Grid item md={3} xs={12}>
+                <Card
+                  title={tituloCard4}
                   value={totalTipoOperadores}
-                  color="primary.main"
+                  color="error.main"
                 />
               </Grid>
             </Grid>

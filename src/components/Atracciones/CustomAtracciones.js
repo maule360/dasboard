@@ -68,6 +68,11 @@ export default function ScrollableTabsButtonForce() {
     getListaAtracciones();
   }, []);
 
+  const tituloCard1 = 'Total Atracciones Registradas';
+  const tituloCard2 = 'Comunas con Atracciones Registradas';
+  const tituloCard3 = 'Provincias con Atracciones Registradas';
+  const tituloCard4 = 'Tipos de Atracciones';
+
   const Contenido = (
     (dataListaAtracciones.length > 0)
       ? (
@@ -77,28 +82,28 @@ export default function ScrollableTabsButtonForce() {
             <Grid container className={classes.cards} spacing={2}>
               <Grid item md={3} xs={12}>
                 <Card
-                  title="Total Atracciones"
+                  title={tituloCard1}
                   value={totalAtracciones}
                   color="success.main"
                 />
               </Grid>
               <Grid item md={3} xs={12}>
                 <Card
-                  title="Total Comunas"
-                  value={totalComunasAtracciones}
-                  color="warning.main"
-                />
-              </Grid>
-              <Grid item md={3} xs={12}>
-                <Card
-                  title="Total Provincias"
+                  title={tituloCard3}
                   value={totalProvinciaAtracciones}
                   color="primary.main"
                 />
               </Grid>
               <Grid item md={3} xs={12}>
                 <Card
-                  title="Total Tipo Atracciones"
+                  title={tituloCard2}
+                  value={totalComunasAtracciones}
+                  color="warning.main"
+                />
+              </Grid>
+              <Grid item md={3} xs={12}>
+                <Card
+                  title={tituloCard4}
                   value={totalTipoAtracciones}
                   color="error.main"
                 />
