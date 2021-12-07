@@ -115,7 +115,7 @@ export default function CustomOperadores() {
 
           <div className={classes.titulo}>
             <Typography color="primary" variant="h5">
-              LISTADO MUSEOS
+              LISTADO OPERADORES
             </Typography>
           </div>
           <div className={classes.div}>

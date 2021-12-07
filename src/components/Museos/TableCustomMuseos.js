@@ -92,7 +92,7 @@ export default function ScrollableTabsButtonForce(props) {
             <Typography color="primary" variant="h5">
               LISTADO MUSEOS PROVINCIA
               {' '}
-              {Provincia}
+              {Provincia.toUpperCase()}
             </Typography>
           </div>
           <div className={classes.div}>

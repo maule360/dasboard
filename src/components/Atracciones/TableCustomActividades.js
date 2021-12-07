@@ -95,7 +95,7 @@ export default function ScrollableTabsButtonForce() {
             <Typography color="primary" variant="h5">
               LISTADO ACTIVIDADES
               {' '}
-              {tituloActividades}
+              {tituloActividades.toUpperCase()}
             </Typography>
           </div>
           <div className={classes.div}>

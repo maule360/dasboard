@@ -3,7 +3,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/require-default-props */
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -17,6 +17,7 @@ import AttractionsIcon from '@mui/icons-material/Attractions';
 import StreetviewIcon from '@mui/icons-material/Streetview';
 import AddRoadIcon from '@mui/icons-material/AddRoad';
 import MuseumIcon from '@mui/icons-material/Museum';
+import gplay from 'google-play-scraper';
 import Atracciones from './Atracciones/Atracciones';
 import Museos from './Museos/Museos';
 import Operadores from './Operadores/Operadores';
@@ -82,6 +83,15 @@ export default function ScrollableTabsButtonForce() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    gplay.list({
+      category: gplay.category.GAME_ACTION,
+      collection: gplay.collection.TOP_FREE,
+      num: 2,
+    }).then(console.log, console.log);
+  }, []);
+
   const tabNames = {
     0: 'Home',
     1: 'Atracciones Turísticas',
