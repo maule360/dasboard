@@ -7,6 +7,7 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import Table1 from './CustomOperadores';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -36,17 +37,8 @@ export default function ScrollableTabsButtonForce() {
 
     <div className={classes.tab}>
       <Grid container className={classes.root} spacing={2}>
-        <Grid item md={4} xs={12}>
-          GRID1
-        </Grid>
-        <Grid item md={4} xs={12}>
-          GRID2
-        </Grid>
-        <Grid item md={4} xs={12}>
-          GRID3
-        </Grid>
-        <Grid item md={4} xs={12}>
-          GRID4
+        <Grid item md={12} xs={12}>
+          <Table1 />
         </Grid>
       </Grid>
     </div>

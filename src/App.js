@@ -4,6 +4,7 @@ import ContenidoMain from './components/ContenidoMain';
 import Atracciones from './contexto/Atracciones/AtraccionesState';
 import Rutas from './contexto/Rutas/RutasState';
 import Museos from './contexto/Museos/MuseosState';
+import Operadores from './contexto/Operadores/OperadoresState';
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
           <Atracciones>
             <Rutas>
               <Museos>
-                <ContenidoMain />
+                <Operadores>
+                  <ContenidoMain />
+                </Operadores>
               </Museos>
             </Rutas>
           </Atracciones>
