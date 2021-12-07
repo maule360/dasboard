@@ -8,6 +8,8 @@ import Reducer from './MuseosReducer';
 import {
   GET_LISTA_MUSEOS,
   FAIL_LISTA_MUSEOS,
+  GET_LISTA_MUSEOS_PROVINCIA,
+  FAIL_LISTA_MUSEOS_PROV,
 } from './index';
 
 const SolverState = ({ children }) => {
@@ -17,9 +19,31 @@ const SolverState = ({ children }) => {
     totalComunasMuseos: null,
     totalProvinciaMuseos: null,
     totalTipoMuseos: null,
+    dataListaMuseosProvincia: [],
+    Provincia: '',
   };
 
   const [state, dispatch] = useReducer(Reducer, initialState);
+
+  const setProvincia = async (prov) => {
+    state.Provincia = prov;
+  };
+
+  const getListaMuseosProvincia = async (id) => {
+    try {
+      const res = await clienteAxios.get(`/museos/${id}/provincia`);
+      dispatch({
+        type: GET_LISTA_MUSEOS_PROVINCIA,
+        payload: res.data,
+      });
+    } catch (error) {
+      console.log(error);
+      dispatch({
+        type: FAIL_LISTA_MUSEOS_PROV,
+        payload: 'fail',
+      });
+    }
+  };
 
   const getListaMuseos = async () => {
     try {
@@ -46,6 +70,10 @@ const SolverState = ({ children }) => {
         totalComunasMuseos: state.totalComunasMuseos,
         totalProvinciaMuseos: state.totalProvinciaMuseos,
         totalTipoMuseos: state.totalTipoMuseos,
+        getListaMuseosProvincia,
+        dataListaMuseosProvincia: state.dataListaMuseosProvincia,
+        setProvincia,
+        Provincia: state.Provincia,
       }}
     >
       {children}

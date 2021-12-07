@@ -6,6 +6,8 @@ import DataFrame from 'dataframe-js';
 import {
   GET_LISTA_MUSEOS,
   FAIL_LISTA_MUSEOS,
+  GET_LISTA_MUSEOS_PROVINCIA,
+  FAIL_LISTA_MUSEOS_PROV,
 } from './index';
 
 export default (state, action) => {
@@ -26,10 +28,20 @@ export default (state, action) => {
         totalProvinciaMuseos: provincias.length,
         dataListaMuseos: action.payload,
       };
+    case GET_LISTA_MUSEOS_PROVINCIA:
+      return {
+        ...state,
+        dataListaMuseosProvincia: action.payload,
+      };
     case FAIL_LISTA_MUSEOS:
       return {
         ...state,
         dataListaMuseos: action.payload,
+      };
+    case FAIL_LISTA_MUSEOS_PROV:
+      return {
+        ...state,
+        dataListaMuseosProvincia: action.payload,
       };
 
     default:

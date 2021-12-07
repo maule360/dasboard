@@ -133,6 +133,10 @@ TablePaginationActions.propTypes = {
 export default function CustomPaginationActionsTable(props) {
   const { rows, cols } = props;
   const classes = useStyles();
+  const {
+    getListaMuseosProvincia,
+    setProvincia,
+  } = useContext(MuseosContext);
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
@@ -151,7 +155,16 @@ export default function CustomPaginationActionsTable(props) {
 
   function handleClick(event) {
     const { id, name } = event.currentTarget;
+    getListaMuseosProvincia(id);
+    setProvincia(name);
   }
+
+  const idProvs = {
+    Talca: '31',
+    Curicó: '32',
+    Linares: '33',
+    Cauquenes: '34',
+  };
 
   return (
     <TableContainer component={Paper}>
@@ -184,6 +197,17 @@ export default function CustomPaginationActionsTable(props) {
               <TableCell style={{ width: 160 }} align="right">
                 {row.direccion}
               </TableCell>
+              <TableCell style={{ width: 160 }} align="right">
+                <Button
+                  className={classes.button}
+                  variant="outlined"
+                  name={row.provincia}
+                  id={idProvs[row.provincia]}
+                  onClick={handleClick}
+                >
+                  {row.provincia}
+                </Button>
+              </TableCell>
             </TableRow>
           ))}
 
@@ -197,7 +221,7 @@ export default function CustomPaginationActionsTable(props) {
           <TableRow>
             <TablePagination
               rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-              colSpan={4}
+              colSpan={5}
               count={rows.length}
               rowsPerPage={rowsPerPage}
               page={page}

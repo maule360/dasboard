@@ -17,6 +17,7 @@ import { Typography, Grid } from '@material-ui/core';
 import MuseosContext from '../../contexto/Museos/MuseosContext';
 import Card from './Card';
 import Tablenew from './Table';
+import Tableprov from './TableCustomMuseos';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -61,10 +62,15 @@ export default function ScrollableTabsButtonForce() {
     totalMuseos,
     totalComunasMuseos,
     totalProvinciaMuseos,
+    dataListaMuseosProvincia,
+    Provincia,
   } = useContext(MuseosContext);
   useEffect(() => {
     getListaMuseos();
   }, []);
+
+  useEffect(() => {
+  }, [dataListaMuseosProvincia]);
 
   const Contenido = (
     (dataListaMuseos.length > 0)
@@ -107,10 +113,15 @@ export default function ScrollableTabsButtonForce() {
               <Grid item md={6} xs={12}>
                 <Tablenew
                   rows={dataListaMuseos}
-                  cols={['Museo', 'Comuna', 'Provincia', 'Direccion']}
+                  cols={['Museo', 'Comuna', 'Provincia', 'Direccion', 'Lista por Provincia']}
                 />
               </Grid>
-              <Grid item md={6} xs={12} />
+              <Grid item md={6} xs={12}>
+                <Tableprov
+                  dataListaMuseosProvincia={dataListaMuseosProvincia}
+                  Provincia={Provincia}
+                />
+              </Grid>
             </Grid>
           </div>
         </div>
