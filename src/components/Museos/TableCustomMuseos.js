@@ -101,7 +101,8 @@ export default function ScrollableTabsButtonForce(props) {
                 <TableHead>
                   <TableRow>
                     <StyledTableCell>Actividad</StyledTableCell>
-                    <StyledTableCell align="right">Detalle</StyledTableCell>
+                    <StyledTableCell align="right">Comuna</StyledTableCell>
+                    <StyledTableCell align="right">Direccion</StyledTableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -110,7 +111,8 @@ export default function ScrollableTabsButtonForce(props) {
                       <StyledTableCell component="th" scope="row">
                         {js.nombre}
                       </StyledTableCell>
-                      <StyledTableCell align="right">{js.descripcion}</StyledTableCell>
+                      <StyledTableCell align="right">{js.comuna}</StyledTableCell>
+                      <StyledTableCell align="right">{js.direccion}</StyledTableCell>
                     </StyledTableRow>
                   ))}
                 </TableBody>
