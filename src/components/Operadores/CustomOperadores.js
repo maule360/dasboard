@@ -63,6 +63,8 @@ export default function CustomOperadores() {
     totalComunasOperadores,
     totalProvinciaOperadores,
     totalTipoOperadores,
+    dataListaOperadoresProvincia,
+    Provincia,
   } = useContext(OperadoresContext);
 
   useEffect(() => {
@@ -70,7 +72,8 @@ export default function CustomOperadores() {
   }, []);
 
   useEffect(() => {
-  }, [dataListaOperadores]);
+    console.log(dataListaOperadoresProvincia);
+  }, [dataListaOperadoresProvincia]);
 
   const Contenido = (
     (dataListaOperadores.length > 0)
@@ -120,10 +123,15 @@ export default function CustomOperadores() {
               <Grid item md={6} xs={12}>
                 <Tablenew
                   rows={dataListaOperadores}
-                  cols={['Operador', 'Categoria', 'Comuna', 'Provincia', 'Direccion']}
+                  cols={['Operador', 'Categoria', 'Comuna', 'Provincia', 'Lista Provincia']}
                 />
               </Grid>
-              <Grid item md={6} xs={12} />
+              <Grid item md={6} xs={12}>
+                <Tableprov
+                  dataListaOperadoresProvincia={dataListaOperadoresProvincia}
+                  Provincia={Provincia}
+                />
+              </Grid>
             </Grid>
           </div>
         </div>

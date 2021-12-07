@@ -135,6 +135,8 @@ export default function CustomPaginationActionsTable(props) {
   const classes = useStyles();
   const {
     getListaOperadores,
+    getListaOperadoresProvincia,
+    setProvincia,
   } = useContext(OperadoresContext);
 
   const [page, setPage] = React.useState(0);
@@ -153,9 +155,18 @@ export default function CustomPaginationActionsTable(props) {
   };
 
   function handleClick(event) {
-    const { id } = event.currentTarget;
+    const { id, name } = event.currentTarget;
     getListaOperadores(id);
+    getListaOperadoresProvincia(id);
+    setProvincia(name);
+    console.log(id, name);
   }
+  const idProvs = {
+    Talca: '32',
+    Curicó: '31',
+    Linares: '33',
+    Cauquenes: '34',
+  };
 
   return (
     <TableContainer component={Paper}>
@@ -189,7 +200,15 @@ export default function CustomPaginationActionsTable(props) {
                 {row.provincia}
               </TableCell>
               <TableCell style={{ width: 160 }} align="right">
-                {row.direccion}
+                <Button
+                  className={classes.button}
+                  variant="outlined"
+                  name={row.provincia}
+                  id={idProvs[row.provincia]}
+                  onClick={handleClick}
+                >
+                  {row.provincia}
+                </Button>
               </TableCell>
             </TableRow>
           ))}
@@ -204,7 +223,7 @@ export default function CustomPaginationActionsTable(props) {
           <TableRow>
             <TablePagination
               rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-              colSpan={6}
+              colSpan={5}
               count={rows.length}
               rowsPerPage={rowsPerPage}
               page={page}

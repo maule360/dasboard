@@ -81,16 +81,16 @@ const useStyles = makeStyles((theme) => ({
 export default function ScrollableTabsButtonForce(props) {
   const classes = useStyles();
   const {
-    dataListaMuseosProvincia,
+    dataListaOperadoresProvincia,
     Provincia,
   } = props;
   const Contenido = (
-    (dataListaMuseosProvincia.length > 0)
+    (dataListaOperadoresProvincia.length > 0)
       ? (
         <div className={classes.div}>
           <div className={classes.titulo}>
             <Typography color="primary" variant="h5">
-              LISTADO MUSEOS PROVINCIA
+              LISTADO OPERADORES PROVINCIA
               {' '}
               {Provincia}
             </Typography>
@@ -102,15 +102,19 @@ export default function ScrollableTabsButtonForce(props) {
                   <TableRow>
                     <StyledTableCell>Actividad</StyledTableCell>
                     <StyledTableCell align="right">Detalle</StyledTableCell>
+                    <StyledTableCell align="right">Contacto</StyledTableCell>
+                    <StyledTableCell align="right">Correo</StyledTableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {dataListaMuseosProvincia.map((js) => (
+                  {dataListaOperadoresProvincia.map((js) => (
                     <StyledTableRow key={js.id}>
                       <StyledTableCell component="th" scope="row">
                         {js.nombre}
                       </StyledTableCell>
-                      <StyledTableCell align="right">{js.descripcion}</StyledTableCell>
+                      <StyledTableCell align="right">{js.comuna}</StyledTableCell>
+                      <StyledTableCell align="right">{js.contacto}</StyledTableCell>
+                      <StyledTableCell align="right">{js.correo}</StyledTableCell>
                     </StyledTableRow>
                   ))}
                 </TableBody>

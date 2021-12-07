@@ -5,7 +5,9 @@ import DataFrame from 'dataframe-js';
 
 import {
   GET_LISTA_OPERADORES,
+  GET_LISTA_OPERADORES_PROVINCIA,
   FAIL_LISTA_OPERADORES,
+  FAIL_LISTA_OPERADORES_PROVINCIA,
 } from './index';
 
 export default (state, action) => {
@@ -28,6 +30,17 @@ export default (state, action) => {
         totalProvinciaOperadores: provincias.length,
         totalTipoOperadores: categoria.length,
         dataListaOperadores: preDf,
+      };
+    case GET_LISTA_OPERADORES_PROVINCIA:
+      const preDf2 = action.payload.map((arr) => arr[0]);
+      return {
+        ...state,
+        dataListaOperadoresProvincia: preDf2,
+      };
+    case FAIL_LISTA_OPERADORES_PROVINCIA:
+      return {
+        ...state,
+        dataListaOperadoresProvincia: action.payload,
       };
     case FAIL_LISTA_OPERADORES:
       return {
