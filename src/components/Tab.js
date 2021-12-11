@@ -94,7 +94,7 @@ export default function ScrollableTabsButtonForce() {
   }, []);
 
   const tabNames = {
-    0: 'Home',
+    0: 'Maule360',
     1: 'Atracciones Turísticas',
     2: 'Rutas Turísticas',
     3: 'Operadores Turísticos',

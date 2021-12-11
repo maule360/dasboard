@@ -100,7 +100,7 @@ export default function ScrollableTabsButtonForce() {
         </Grid>
         <Grid item md={3} xs={12}>
           <CardInstalls
-            title={tituloCard6}
+            title={tituloCard5}
             value={dataMaule.maxInstalls}
             color={deepOrange[500]}
           />

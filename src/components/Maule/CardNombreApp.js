@@ -10,7 +10,7 @@ export default function CardAtracciones() {
       height: '100%',
     }}
     >
-      <CardContent>
+      <CardContent style={{ backgroundColor: '#A0A0A0' }}>
         <Grid
           container
           spacing={3}
