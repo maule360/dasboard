@@ -5,6 +5,7 @@ import Atracciones from './contexto/Atracciones/AtraccionesState';
 import Rutas from './contexto/Rutas/RutasState';
 import Museos from './contexto/Museos/MuseosState';
 import Operadores from './contexto/Operadores/OperadoresState';
+import Maule from './contexto/Maule/MauleState';
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
             <Rutas>
               <Museos>
                 <Operadores>
-                  <ContenidoMain />
+                  <Maule>
+                    <ContenidoMain />
+                  </Maule>
                 </Operadores>
               </Museos>
             </Rutas>

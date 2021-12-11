@@ -22,6 +22,7 @@ import Atracciones from './Atracciones/Atracciones';
 import Museos from './Museos/Museos';
 import Operadores from './Operadores/Operadores';
 import Rutas from './Rutas/Rutas';
+import Maule from './Maule/Maule';
 
 function TabPanel(props) {
   const {
@@ -142,16 +143,7 @@ export default function ScrollableTabsButtonForce() {
       </AppBar>
 
       <TabPanel value={value} index={0}>
-        <img
-          alt="Under development"
-          src="/images/maule360.png"
-          style={{
-            marginTop: 50,
-            display: 'inline-block',
-            maxWidth: '50%',
-            width: 260,
-          }}
-        />
+        <Maule />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Atracciones />
